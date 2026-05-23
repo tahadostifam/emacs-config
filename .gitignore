@@ -1,0 +1,93 @@
+# ---------------------------------
+# Emacs generated files
+# ---------------------------------
+
+# Backups
+*~
+\#*\#
+
+# Auto saves
+auto-save-list/
+
+# Lockfiles
+.#*
+
+# Recent files
+recentf
+
+# Savehist
+history
+savehist
+
+# Bookmarks
+bookmarks
+
+# Desktop sessions
+.desktop
+.desktop.lock
+
+# Server files
+server/
+
+# URL cache
+url/
+
+# Projectile
+.projectile
+
+# Tramp
+tramp
+
+# ---------------------------------
+# Package managers / caches
+# ---------------------------------
+
+# ELPA packages
+elpa/
+
+# Native compilation cache
+eln-cache/
+
+# Transient cache
+transient/
+
+# Eshell history/data
+eshell/
+
+# ---------------------------------
+# Org mode
+# ---------------------------------
+
+org-id-locations
+org-clock-save.el
+
+# ---------------------------------
+# Custom user settings
+# ---------------------------------
+
+custom.el
+
+# ---------------------------------
+# LSP / Eglot
+# ---------------------------------
+
+.eglot/
+
+# ---------------------------------
+# Treesitter
+# ---------------------------------
+
+tree-sitter/
+
+# ---------------------------------
+# Direnv
+# ---------------------------------
+
+.direnv/
+
+# ---------------------------------
+# OS junk
+# ---------------------------------
+
+.DS_Store
+Thumbs.db
