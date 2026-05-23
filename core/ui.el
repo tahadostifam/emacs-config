@@ -5,3 +5,7 @@
 
 ;; Line numbers
 (global-display-line-numbers-mode 1)
+
+(setq tab-always-indent 'complete)
+
+(global-set-key (kbd "TAB") #'indent-for-tab-command)
