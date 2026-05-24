@@ -1,13 +1,14 @@
 (require 'package)
 
 (setq native-comp-async-report-warnings-errors nil)
+(setq package-install-upgrade-built-in t)
+(setq package-check-signature nil)
 
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
-        ("gnu" . "https://elpa.gnu.org/packages/")))
-
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+        ("gnu" . "https://elpa.gnu.org/packages/")
+        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+        ("gnu-devel" . "https://elpa.gnu.org/devel/")))
 
 (package-initialize)
 
@@ -30,8 +31,9 @@
 (load-file "~/.emacs.d/plugins/eglot.el")
 (load-file "~/.emacs.d/plugins/git.el")
 (load-file "~/.emacs.d/plugins/todos.el")
-(load-file "~/.emacs.d/plugins/sideline.el")
-(load-file "~/.emacs.d/plugins/eglot.el")
+;; (load-file "~/.emacs.d/plugins/sideline.el")
+;; (load-file "~/.emacs.d/plugins/search.el")
+;; (load-file "~/.emacs.d/plugins/sidebar.el") 
 
 ;; Themes
 (add-to-list 'custom-theme-load-path
