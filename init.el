@@ -4,6 +4,10 @@
 (setq package-install-upgrade-built-in t)
 (setq package-check-signature nil)
 
+;; (setq package-archives
+;;   '(("elpa" . "https://mirror.cloud9p.org/pub/emacs/elpa/")
+;;     ("melpa" . "https://mirror.cloud9p.org/pub/emacs/snapshots/")))
+
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
         ("gnu" . "https://elpa.gnu.org/packages/")
@@ -40,15 +44,3 @@
              (expand-file-name "themes" user-emacs-directory))
 
 (load-theme 'skull :no-confirm)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
