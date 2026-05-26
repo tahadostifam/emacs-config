@@ -9,3 +9,5 @@
 (setq tab-always-indent 'complete)
 
 (global-set-key (kbd "TAB") #'indent-for-tab-command)
+
+(windmove-default-keybindings)

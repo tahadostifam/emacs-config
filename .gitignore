@@ -91,3 +91,7 @@ tree-sitter/
 
 .DS_Store
 Thumbs.db
+
+.cache
+
+projectile-bookmarks.eld

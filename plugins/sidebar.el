@@ -1,38 +1,48 @@
-;; (use-package projectile
-;;   :ensure t
-;;   :init
-;;   (projectile-mode 1)
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode 1)
 
-;;   :bind-keymap
-;;   ("C-c p" . projectile-command-map)
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
 
-;;   :config
-;;   ;; Optional: cache projects for faster indexing
-;;   (setq projectile-enable-caching t))
+  :config
+  ;; Optional: cache projects for faster indexing
+  (setq projectile-enable-caching t))
 
-;; (use-package treemacs
-;;   :ensure t
-;;   :defer t
-;;   :bind
-;;   ("C-c t" . treemacs)
+(use-package treemacs
+  :ensure t
+  :defer t
+  :bind
+  ("C-c t" . treemacs)
 
-;;   :config
-;;   ;; Sidebar width
-;;   (setq treemacs-width 35)
+  :config
+  ;; Sidebar width
+  (setq treemacs-width 30)
 
-;;   ;; Better visuals
-;;   (treemacs-follow-mode t)
-;;   (treemacs-filewatch-mode t)
-;;   (treemacs-fringe-indicator-mode 'always)
+  ;; Better visuals
+  (treemacs-follow-mode t)
+  (treemacs-filewatch-mode t)
+  (treemacs-fringe-indicator-mode 'always)
+  (treemacs-project-follow-mode t)
 
-;;   ;; Optional: git integration if available
-;;   (when (executable-find "git")
-;;     (treemacs-git-mode 'deferred)))
+  (when (executable-find "git")
+    (treemacs-git-mode 'deferred)))
 
-;; (use-package treemacs-projectile
-;;   :ensure t
-;;   :after (treemacs projectile))
+;; Open Treemacs on startup
+(add-hook 'emacs-startup-hook #'treemacs)
 
-;; (use-package treemacs-magit
-;;   :ensure t
-;;   :after (treemacs magit))
+;; Disable line numbers for treemacs
+(add-hook 'treemacs-mode-hook
+          (lambda ()
+            (display-line-numbers-mode -1)))
+
+
+
+(use-package treemacs-projectile
+  :ensure t
+  :after (treemacs projectile))
+
+(use-package treemacs-magit
+  :ensure t
+  :after (treemacs magit))
