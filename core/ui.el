@@ -10,4 +10,10 @@
 
 (global-set-key (kbd "TAB") #'indent-for-tab-command)
 
-(windmove-default-keybindings)
+(use-package windmove
+  :ensure nil
+  :bind*
+  (("M-<left>" . windmove-left)
+   ("M-<right>" . windmove-right)
+   ("M-<up>" . windmove-up)
+   ("M-<down>" . windmove-down)))

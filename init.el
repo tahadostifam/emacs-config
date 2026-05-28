@@ -24,9 +24,6 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; Dashboard
-(load-file "~/.emacs.d/plugins/dashboard.el")
-
 ;; Core
 (load-file "~/.emacs.d/core/keybindings.el")
 (load-file "~/.emacs.d/core/editing.el")
@@ -46,3 +43,15 @@
              (expand-file-name "themes" user-emacs-directory))
 
 (load-theme 'skull :no-confirm)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
