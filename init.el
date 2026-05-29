@@ -36,7 +36,8 @@
 (load-file "~/.emacs.d/plugins/todos.el")
 (load-file "~/.emacs.d/plugins/sideline.el")
 (load-file "~/.emacs.d/plugins/search.el")
-(load-file "~/.emacs.d/plugins/sidebar.el") 
+(load-file "~/.emacs.d/plugins/sidebar.el")
+(load-file "~/.emacs.d/plugins/fold.el") 
 
 ;; Themes
 (add-to-list 'custom-theme-load-path
