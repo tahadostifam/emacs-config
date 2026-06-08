@@ -17,3 +17,5 @@
    ("M-<right>" . windmove-right)
    ("M-<up>" . windmove-up)
    ("M-<down>" . windmove-down)))
+
+(winner-mode 1)

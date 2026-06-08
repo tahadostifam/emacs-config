@@ -1,10 +1,10 @@
-(use-package markdown-mode
-  :ensure t
-  :mode (("\\.md\\'" . markdown-mode))
-  :config
-  (setq markdown-fontify-code-blocks-natively t))
+;; (use-package markdown-mode
+;;   :ensure t
+;;   :mode ("\\.md\\'" . gfm-mode)
+;;   :init (setq markdown-command "multimarkdown")
+;;   :bind (:map markdown-mode-map
+;;               ("C-c C-e" . markdown-do)))
 
-(setq markdown-hide-markup t)
+;; (setq markdown-hide-markup t)
 
-(use-package grip-mode
-  :ensure t)
+;; (setq markdown-split-window-direction 'right)
