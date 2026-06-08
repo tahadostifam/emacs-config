@@ -1,4 +1,4 @@
-;; Tree-sitter major mode remapping
+
 (setq major-mode-remap-alist
       '((rust-mode . rust-ts-mode)
         (c-mode . c-ts-mode)
@@ -94,4 +94,3 @@
   :ensure t
   :init
   (add-to-list 'completion-at-point-functions #'cape-dabbrev))
-

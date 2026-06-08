@@ -40,6 +40,8 @@
 (load-file "~/.emacs.d/plugins/fold.el")
 (load-file "~/.emacs.d/plugins/markdown.el")
 
+(load-file "~/.emacs.d/plugins/cyrus-mode.el")
+
 ;; Themes
 (add-to-list 'custom-theme-load-path
              (expand-file-name "themes" user-emacs-directory))
