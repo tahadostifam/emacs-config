@@ -39,6 +39,7 @@
 (load-file "~/.emacs.d/plugins/sidebar.el")
 (load-file "~/.emacs.d/plugins/fold.el")
 (load-file "~/.emacs.d/plugins/markdown.el")
+(load-file "~/.emacs.d/plugins/icons.el")
 
 (load-file "~/.emacs.d/plugins/cyrus-mode.el")
 
@@ -47,3 +48,18 @@
              (expand-file-name "themes" user-emacs-directory))
 
 (load-theme 'skull :no-confirm)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(all-the-icons auctex cape consult corfu diff-hl hl-todo kind-icon
+                   markdown-mode sideline-flymake treemacs-magit
+                   treemacs-projectile vertico)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

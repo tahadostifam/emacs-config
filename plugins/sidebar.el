@@ -7,7 +7,6 @@
   ("C-c p" . projectile-command-map)
 
   :config
-  ;; Optional: cache projects for faster indexing
   (setq projectile-enable-caching t))
 
 (use-package treemacs

@@ -16,7 +16,6 @@
   (define-key my/fold-map (kbd "0") #'hs-hide-all)
   (define-key my/fold-map (kbd "9") #'hs-show-all)
 
-  ;; FIXED: correct hs-native level folding
   (defun my/hs-hide-level (level)
     "Hide all blocks deeper than LEVEL using hs-hide-level."
     (interactive "nFold level: ")
