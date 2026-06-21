@@ -43,7 +43,6 @@
 (load-file "~/.emacs.d/plugins/search.el")
 (load-file "~/.emacs.d/plugins/sidebar.el")
 (load-file "~/.emacs.d/plugins/fold.el")
-(load-file "~/.emacs.d/plugins/markdown.el")
 (load-file "~/.emacs.d/plugins/icons.el")
 (load-file "~/.emacs.d/plugins/modeline.el")
 ;; (load-file "~/.emacs.d/plugins/telega.el")
