@@ -19,3 +19,6 @@
    ("M-<down>" . windmove-down)))
 
 (winner-mode 1)
+
+(global-set-key (kbd "C-c +") 'text-scale-increase)
+(global-set-key (kbd "C-c -") 'text-scale-decrease)

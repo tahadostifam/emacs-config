@@ -17,7 +17,7 @@
 
   :config
   ;; Sidebar width
-  (setq treemacs-width 30)
+  (setq treemacs-width 35)
 
   ;; Better visuals
   (treemacs-follow-mode t)

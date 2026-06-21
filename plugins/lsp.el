@@ -1,4 +1,3 @@
-
 (setq major-mode-remap-alist
       '((rust-mode . rust-ts-mode)
         (c-mode . c-ts-mode)
@@ -9,6 +8,7 @@
 
 ;; File associations
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.cyrus\\'" . cyrus-mode))
 
 (use-package eglot
   :ensure nil
@@ -43,6 +43,31 @@
                '((rust-ts-mode)
                  . ("rust-analyzer"))))
 
+(use-package yaml-mode
+  :ensure t
+  :mode ("\\.ya?ml\\'" . yaml-mode))
+
+(use-package json-mode
+  :ensure t
+  :mode ("\\.json\\'" . json-mode))
+
+(use-package toml-mode
+  :ensure t
+  :mode ("\\.toml\\'" . toml-mode))
+
+(use-package web-mode
+  :ensure t
+  :mode (("\\.html?\\'" . web-mode)
+         ("\\.css\\'" . web-mode)
+         ("\\.scss\\'" . web-mode)
+         ("\\.less\\'" . web-mode))
+  :config
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-script-indent-offset 2)
+  (setq web-mode-enable-current-element-highlight t)
+  (setq web-mode-enable-current-column-highlight t))
+
 (use-package corfu
   :ensure t
 
@@ -62,7 +87,6 @@
   ;; Enable popup info
   (corfu-popupinfo-mode))
 
-;; Optional but recommended
 (use-package kind-icon
   :ensure t
   :after corfu
@@ -73,14 +97,14 @@
                #'kind-icon-margin-formatter))
 
 
-;; Better completion commands
+;; better completion commands
 (use-package emacs
   :ensure nil
   :custom
   (tab-always-indent 'complete)
   (completion-cycle-threshold 3))
 
-;; Optional: richer annotations
+;; richer annotations
 (use-package kind-icon
   :ensure t
   :after corfu
@@ -89,7 +113,7 @@
   :config
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
-;; Optional: minibuffer completion improvements
+;; minibuffer completion improvements
 (use-package cape
   :ensure t
   :init

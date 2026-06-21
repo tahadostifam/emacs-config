@@ -8,6 +8,11 @@
 (setq inhibit-startup-message t)
 
 (setq package-archives
+      '(("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+
+(setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
         ("gnu" . "https://elpa.gnu.org/packages/")
         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
@@ -31,7 +36,7 @@
 (load-file "~/.emacs.d/core/ui.el")
 
 ;; Plugins
-(load-file "~/.emacs.d/plugins/eglot.el")
+(load-file "~/.emacs.d/plugins/lsp.el")
 (load-file "~/.emacs.d/plugins/git.el")
 (load-file "~/.emacs.d/plugins/todos.el")
 (load-file "~/.emacs.d/plugins/sideline.el")
@@ -40,7 +45,10 @@
 (load-file "~/.emacs.d/plugins/fold.el")
 (load-file "~/.emacs.d/plugins/markdown.el")
 (load-file "~/.emacs.d/plugins/icons.el")
+(load-file "~/.emacs.d/plugins/modeline.el")
+;; (load-file "~/.emacs.d/plugins/telega.el")
 
+;; Cyrus Mode
 (load-file "~/.emacs.d/plugins/cyrus-mode.el")
 
 ;; Themes
@@ -54,9 +62,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(all-the-icons auctex cape consult corfu diff-hl hl-todo kind-icon
-                   markdown-mode sideline-flymake treemacs-magit
-                   treemacs-projectile vertico)))
+   '(all-the-icons auctex cape consult corfu diff-hl doom-modeline embark
+                   embark-consult hl-todo json-mode kind-icon
+                   marginalia markdown-mode minimap nerd-icons quelpa
+                   sideline-flymake telega toml-mode treemacs-magit
+                   treemacs-projectile vertico web-mode yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

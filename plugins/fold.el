@@ -22,14 +22,14 @@
     (hs-show-all)
     (hs-hide-level level))
 
-  ;; Level-based folding (NOW WORKING CORRECTLY)
+  ;; Level-based folding
   (define-key my/fold-map (kbd "1")
               (lambda () (interactive) (my/hs-hide-level 1)))
 
   (define-key my/fold-map (kbd "2")
               (lambda () (interactive) (my/hs-hide-level 2)))
 
-  (define-key my/fold-map (kbd "3")
+  (define-key my/fold-map (kbd "3")1
               (lambda () (interactive) (my/hs-hide-level 3)))
 
   (define-key my/fold-map (kbd "4")
