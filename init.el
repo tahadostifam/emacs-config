@@ -45,7 +45,7 @@
 (load-file "~/.emacs.d/plugins/fold.el")
 (load-file "~/.emacs.d/plugins/icons.el")
 (load-file "~/.emacs.d/plugins/modeline.el")
-;; (load-file "~/.emacs.d/plugins/telega.el")
+;;(load-file "~/.emacs.d/plugins/telega.el")
 
 ;; Cyrus Mode
 (load-file "~/.emacs.d/plugins/cyrus-mode.el")
@@ -55,16 +55,3 @@
              (expand-file-name "themes" user-emacs-directory))
 
 (load-theme 'skull :no-confirm)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(mode-line ((t (:family "Noto Sans" :height 100))))
- '(mode-line-inactive ((t (:family "Noto Sans" :height 100)))))
