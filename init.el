@@ -61,15 +61,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(all-the-icons auctex cape consult corfu diff-hl doom-modeline embark
-                   embark-consult hl-todo json-mode kind-icon
-                   marginalia markdown-mode minimap nerd-icons quelpa
-                   sideline-flymake telega toml-mode treemacs-magit
-                   treemacs-projectile vertico web-mode yaml-mode)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(mode-line ((t (:family "Noto Sans" :height 100))))
+ '(mode-line-inactive ((t (:family "Noto Sans" :height 100)))))
