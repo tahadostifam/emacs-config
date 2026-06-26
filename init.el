@@ -7,19 +7,11 @@
 (setq inhibit-startup-echo-area-message t)
 (setq inhibit-startup-message t)
 
-;; (setq package-archives
-;;       '(("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-;;         ("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;         ("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
-
 (setq package-archives
       '(("melpa" . "https://melpa.org/packages/")
         ("gnu" . "https://elpa.gnu.org/packages/")
         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
         ("gnu-devel" . "https://elpa.gnu.org/devel/")))
-
-(unless package-archive-contents
-  (package-refresh-contents))
 
 (package-initialize)
 
@@ -55,19 +47,3 @@
              (expand-file-name "themes" user-emacs-directory))
 
 (load-theme 'skull :no-confirm)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(all-the-icons auctex cape consult corfu diff-hl doom-modeline
-                   hl-todo json-mode kind-icon lsp-mode minimap quelpa
-                   sideline-flymake telega toml-mode treemacs-magit
-                   treemacs-projectile vertico web-mode yaml-mode)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
