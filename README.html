@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<h1>Emacs Conf</h1>
+
+<p>Personal Emacs configuration with a modular structure, custom &quot;skull&quot; theme, and
+support for development in Rust, C/C++, Python, TypeScript/JavaScript, and more.</p>
+
+<h2>Installation</h2>
+
+<h3>Prerequisites</h3>
+
+<ul>
+<li>Emacs 29+ (with native-comp support recommended)</li>
+<li>Git</li>
+<li>For Wayland: <code>wl-clipboard</code> (<code>wl-copy</code> / <code>wl-paste</code>)</li>
+<li>For LSP: Language servers for your languages (see below)</li>
+</ul>
+
+<h3>Steps</h3>
+
+<p>```bash</p>
+
+<h1>Clone the repository</h1>
+
+<p>git clone <your-repo-url> ~/.emacs.d</p>
+
+<h1>Launch Emacs — packages will install automatically</h1>
+
+<p>emacs
+```</p>
+
+<p>On first launch, Emacs will:</p>
+
+<ol>
+<li>Install <code>use-package</code> (if not built-in)</li>
+<li>Install all configured packages from ELPA/MELPA</li>
+<li>Load the &quot;skull&quot; theme</li>
+<li>Open treemacs sidebar</li>
+</ol>
+
+<h3>Language Servers (Optional)</h3>
+
+<p>Install the language servers you need:</p>
+
+<p>```bash</p>
+
+<h1>Rust</h1>
+
+<p>rustup component add rust-analyzer</p>
+
+<h1>C/C++</h1>
+
+<p>sudo apt install clangd-14 # or your distro's equivalent</p>
+
+<h1>Python</h1>
+
+<p>pip install python-lsp-server</p>
+
+<h1>TypeScript / JavaScript</h1>
+
+<p>npm install -g typescript typescript-language-server</p>
+
+<h1>Bash</h1>
+
+<p>npm install -g bash-language-server
+```</p>
+
+<h2>Packages</h2>
+
+<h3>Completion &amp; Search</h3>
+
+<p>vertico, consult, corfu, cape, kind-icon</p>
+
+<h3>Git</h3>
+
+<p>magit, diff-hl</p>
+
+<h3>Project &amp; File Tree</h3>
+
+<p>projectile, treemacs, treemacs-projectile, treemacs-magit</p>
+
+<h3>Editing</h3>
+
+<p>multiple-cursors</p>
+
+<h3>Interface</h3>
+
+<p>doom-modeline, nerd-icons, sideline, sideline-flymake, hl-todo, windmove</p>
+
+<h3>Major Modes</h3>
+
+<p>web-mode, yaml-mode, json-mode, toml-mode, cyrus-mode (custom)</p>
+
+<h3>LSP</h3>
+
+<p>eglot, rust-analyzer, clangd, python-lsp-server, typescript-language-server, bash-language-server</p>
+
+<h2>Keybindings</h2>
+
+<h3>General Editing</h3>
+
+<p>C-x h -&gt; mark-whole-buffer (select entire buffer)
+TAB -&gt; indent-for-tab-command (indent line / completion)
+C-c + -&gt; text-scale-increase (increase font size)
+C-c - -&gt; text-scale-decrease (decrease font size)
+<f5> -&gt; my/build-and-run (run <code>make &amp;&amp; ./main</code>)</p>
+
+<h3>Multiple Cursors</h3>
+
+<p>C-&gt; -&gt; mc/mark-next-like-this (add cursor at next occurrence)
+C-&lt; -&gt; mc/mark-previous-like-this (add cursor at previous occurrence)
+C-c C-&lt; -&gt; mc/mark-all-like-this (add cursor at all occurrences)</p>
+
+<h3>Search &amp; Navigation</h3>
+
+<p>C-s -&gt; consult-line (search current buffer)
+C-S-f -&gt; consult-grep (search across files / project)
+M-s f -&gt; consult-find (find files in project)
+M-s l -&gt; consult-line-multi (search across all buffers)
+M-s k -&gt; consult-keep-lines (filter buffer lines)
+M-s u -&gt; consult-focus-lines (focus on matching lines)
+C-x b -&gt; consult-buffer (switch buffers / recent files)</p>
+
+<h3>Window Navigation</h3>
+
+<p>M-<left> -&gt; windmove-left (move to window on the left)
+M-<right> -&gt; windmove-right (move to window on the right)
+M-<up> -&gt; windmove-up (move to window above)
+M-<down> -&gt; windmove-down (move to window below)</p>
+
+<h3>Project &amp; File Tree</h3>
+
+<p>C-c p -&gt; projectile-command-map (projectile commands prefix)
+C-c t -&gt; treemacs (toggle file tree sidebar)</p>
+
+<h3>Git (Magit)</h3>
+
+<p>C-x g -&gt; magit-status (open Magit status buffer)</p>
+
+<h3>Code Folding (prefix: C-k)</h3>
+
+<p>C-k [ -&gt; hs-hide-block (hide current block)
+C-k ] -&gt; hs-show-block (show current block)
+C-k 0 -&gt; hs-hide-all (hide all blocks)
+C-k 9 -&gt; hs-show-all (show all blocks)
+C-k 1, C-k 2, C-k 3, C-k 4 -&gt; fold to depth 1-4</p>
+
+<h2>Emacs Beginner's Guide</h2>
+
+<h3>Basic Terminology</h3>
+
+<ul>
+<li><strong>Buffer</strong> — An open file (or scratch space) in memory</li>
+<li><strong>Window</strong> — A pane showing a buffer</li>
+<li><strong>Frame</strong> — A full Emacs window (like a GUI window)</li>
+<li><strong>Point</strong> — The cursor position</li>
+<li><strong>Mark</strong> — A saved position (for selections)</li>
+<li><strong>Minibuffer</strong> — The command line at the bottom</li>
+<li><strong>Mode line</strong> — The status bar at the bottom of each window</li>
+</ul>
+
+<h3>Essential Concepts</h3>
+
+<h4>The Meta (M-) and Control (C-) Modifiers</h4>
+
+<ul>
+<li><code>C-</code> means hold <strong>Ctrl</strong></li>
+<li><code>M-</code> means hold <strong>Alt</strong> (or press <strong>Esc</strong> then release)</li>
+<li><code>C-x C-c</code> means: hold Ctrl, press x, press c, release Ctrl</li>
+<li><code>C-c t</code> means: hold Ctrl, press c, release Ctrl, then press t</li>
+</ul>
+
+<h3>File Operations</h3>
+
+<p>C-x C-f -&gt; Find and open a file
+C-x C-s -&gt; Save current buffer
+C-x C-w -&gt; Write buffer to new filename (Save as)
+C-x s -&gt; Save all modified buffers
+C-x k -&gt; Kill (close) current buffer
+C-x b <em>scratch</em> -&gt; Open scratch buffer
+C-x C-v -&gt; Reload file from disk
+C-x b -&gt; Switch to recently opened files</p>
+
+<h3>Navigation</h3>
+
+<p>C-f -&gt; Move forward one character
+C-b -&gt; Move backward one character
+M-f -&gt; Move forward one word
+M-b -&gt; Move backward one word
+C-n -&gt; Move to next line
+C-p -&gt; Move to previous line
+C-a -&gt; Go to start of line
+C-e -&gt; Go to end of line
+C-v -&gt; Scroll down one screen
+M-v -&gt; Scroll up one screen
+M-&lt; -&gt; Go to start of file
+M-&gt; -&gt; Go to end of file
+M-g g -&gt; Jump to line number
+C-M-v -&gt; Scroll other window</p>
+
+<h3>Editing</h3>
+
+<p>C-x u or C-/ -&gt; Undo last change
+C-g then C-/ -&gt; Redo after undo
+C-w -&gt; Cut selected region
+M-w -&gt; Copy selected region
+C-y -&gt; Paste last killed text
+M-y -&gt; Cycle through kill ring after C-y
+C-d -&gt; Delete character at point
+M-d -&gt; Delete word after point
+C-k -&gt; Kill (cut) to end of line
+C-t -&gt; Swap two characters
+M-t -&gt; Swap two words
+C-x C-t -&gt; Swap two lines
+M-; -&gt; Comment or uncomment region/line
+C-M- -&gt; Indent selected region</p>
+
+<h3>Selecting (Region)</h3>
+
+<p>C-<SPC> -&gt; Start selection at point
+M-@ -&gt; Select word
+C-S-e -&gt; Drag with Shift + arrow
+C-x h -&gt; Mark entire buffer
+M-w -&gt; Copy selected text
+C-w -&gt; Cut selected text
+C-g -&gt; Deactivate mark</p>
+
+<h3>Search and Replace</h3>
+
+<p>C-s -&gt; Incremental search (consult-line)
+C-r -&gt; Search backward
+C-S-f -&gt; Grep across files
+M-s f -&gt; Find file in project
+M-% -&gt; Find and replace with confirmation
+C-M-% -&gt; Replace all without asking (regex)</p>
+
+<h3>Window Management</h3>
+
+<p>C-x 2 -&gt; Split window above and below
+C-x 3 -&gt; Split window side by side
+C-x 0 -&gt; Close current window
+C-x 1 -&gt; Keep only current window
+C-x o -&gt; Move cursor to other window
+M-<left> -&gt; Move to window on the left (this config)
+M-<right> -&gt; Move to window on the right (this config)
+M-<up> -&gt; Move to window above (this config)
+M-<down> -&gt; Move to window below (this config)
+C-c LEFT -&gt; winner-undo (undo window layout)
+C-c RIGHT -&gt; winner-redo (redo window layout)</p>
+
+<h3>Frame Management</h3>
+
+<p>C-x 5 2 -&gt; Create a new frame
+C-x 5 0 -&gt; Close current frame
+C-x 5 f -&gt; Open file in new frame
+C-x 4 f -&gt; Open file in other window</p>
+
+<h3>Buffer Management</h3>
+
+<p>C-x b -&gt; consult-buffer with preview
+C-x C-b -&gt; Show buffer list
+C-x k -&gt; Close current buffer
+C-x <right> -&gt; Switch to next buffer
+C-x <left> -&gt; Switch to previous buffer
+C-x C-v -&gt; Reload from disk</p>
+
+<h3>Dired (File Manager)</h3>
+
+<p>C-x d -&gt; Open directory listing
+C-x C-j -&gt; dired-jump
+(+) Create directory, (C) Copy file, (R) Rename / move, (d then x) Delete file, (Enter) Open file</p>
+
+<h3>Help</h3>
+
+<p>C-h k -&gt; What does this key do?
+C-h f -&gt; Show help for a function
+C-h v -&gt; Show help for a variable
+C-h m -&gt; Show help for current major mode
+C-h t -&gt; Built-in Emacs tutorial
+C-h i -&gt; Open info manual browser
+C-h a -&gt; Search commands by keyword
+C-h b -&gt; List all keybindings for current buffer
+M-x list-packages -&gt; Browse and install packages</p>
+
+<h3>Common Operations</h3>
+
+<h4>Copy from system clipboard (Wayland)</h4>
+
+<p>The config integrates with <code>wl-clipboard</code> automatically. M-w copies, C-y pastes.</p>
+
+<h4>Build and run</h4>
+
+<p>Press <f5> to run <code>make &amp;&amp; ./main</code></p>
+
+<h4>Change font size</h4>
+
+<p>C-c + to increase, C-c - to decrease</p>
+
+<h4>Code folding</h4>
+
+<p>C-k [ to fold, C-k ] to unfold, C-k 1-4 to fold by level</p>
+
+<h4>Git operations with Magit</h4>
+
+<p>C-x g opens Magit status. In Magit: s to stage, S to stage all, c to commit, P to push, F to pull, l to view log, b to checkout branch</p>
+
+<h4>Sync your config</h4>
+
+<p>```bash
+cd ~/.emacs.d &amp;&amp; git pull</p>
+
+<h1>Restart Emacs or evaluate: M-x eval-buffer in init.el</h1>
+
+<p>```</p>
+
+<h3>Built-in Modes</h3>
+
+<p>M-x shell, M-x eshell, M-x term, M-x calc, M-x calendar, M-x doctor, M-x tetris, M-x snake</p>
+
+<h3>Configuration Structure</h3>
+
+<p><code>~/.emacs.d/
+├── init.el                 # Entry point, package setup, theme
+├── core/
+│   ├── keybindings.el      # Global keybindings
+│   ├── editing.el          # Editing settings (multiple-cursors)
+│   ├── clipboard.el        # Wayland clipboard integration
+│   └── ui.el               # UI settings, fonts, windmove
+├── plugins/
+│   ├── git.el              # Magit and diff-hl
+│   ├── lsp.el              # Eglot, file associations, corfu
+│   ├── search.el           # Vertico and consult
+│   ├── sidebar.el          # Projectile and treemacs
+│   ├── sideline.el         # Diagnostic sideline
+│   ├── fold.el             # Code folding (hideshow)
+│   ├── modeline.el         # Doom modeline
+│   ├── icons.el            # Nerd icons
+│   ├── todos.el            # hl-todo
+│   └── cyrus-mode.el       # Custom major mode
+├── themes/
+│   └── skull-theme.el      # Custom dark theme
+├── elpa/                   # Installed packages (auto-generated)
+└── README.md               # This file</code></p>
+
+<h3>Useful Emacs Lisp Commands</h3>
+
+<p>Run these with M-x:
+M-x eval-buffer -&gt; Evaluate (load) entire buffer
+M-x eval-region -&gt; Evaluate selected Elisp code
+M-x eval-expression -&gt; Evaluate one Elisp expression
+M-x toggle-frame-fullscreen -&gt; Toggle fullscreen
+M-x global-display-line-numbers-mode -&gt; Toggle line numbers
+M-x whitespace-mode -&gt; Show whitespace characters
+M-x visual-line-mode -&gt; Soft word wrap
+M-x toggle-truncate-lines -&gt; Toggle line truncation
+M-x customize -&gt; GUI settings browser</p>
+
+<hr />
+
+<h2>Theme</h2>
+
+<p>The <strong>skull</strong> theme is a custom green-on-black cyberpunk dark theme.</p>
+
+<ul>
+<li>Background: <code>#0a0a0a</code></li>
+<li>Foreground: <code>#bfbfbf</code></li>
+<li>Accent: <code>#03ff28</code> (green)</li>
+<li>Secondary: <code>#c2a200</code> (yellow), <code>#4da3ff</code> (blue), <code>#00e5ff</code> (cyan), <code>#ff4df0</code> (magenta)</li>
+</ul>
+
+<hr />
+
+<h2>Troubleshooting</h2>
+
+<p><strong>Packages fail to install?</strong>
+<code>elisp
+;; In Emacs:
+M-x package-refresh-contents
+M-x package-install RET &lt;package-name&gt;</code></p>
+
+<p><strong>Theme not loading?</strong></p>
+
+<ul>
+<li>Ensure <code>skull-theme.el</code> is in <code>~/.emacs.d/themes/</code></li>
+<li>Run <code>M-x load-theme RET skull RET</code></li>
+</ul>
+
+<p><strong>Clipboard not working on Wayland?</strong></p>
+
+<ul>
+<li>Install <code>wl-clipboard</code>: <code>sudo apt install wl-clipboard</code></li>
+<li>Verify <code>wl-copy</code> and <code>wl-paste</code> are in <code>$PATH</code></li>
+</ul>
+
+</body>
+</html>
