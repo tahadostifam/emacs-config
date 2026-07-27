@@ -49,3 +49,22 @@
 
 ;; (load-theme 'skull :no-confirm)
 (load-theme 'naysayer :no-confirm)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(auctex cape consult corfu counsel diff-hl doom-modeline hl-todo
+            json-mode kind-icon markdown-preview-mode material-icon
+            move-text multiple-cursors nerd-icons-dired no-littering
+            sideline-flymake spaceline telephone-line toml-mode
+            treemacs-all-the-icons treemacs-magit treemacs-nerd-icons
+            treemacs-projectile vertico web-mode
+            whitespace-cleanup-mode yaml-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

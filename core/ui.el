@@ -22,20 +22,3 @@
 
 (global-set-key (kbd "C-c +") 'text-scale-increase)
 (global-set-key (kbd "C-c -") 'text-scale-decrease)
-
-(use-package ivy
-  :ensure t
-  :diminish ivy-mode
-  :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t
-        ivy-count-format "(%d/%d) "
-        ivy-re-builders-alist '((t . ivy--regex-fuzzy))
-        ivy-initial-inputs-alist nil
-        ivy-extra-directories '("./" "../")
-        ivy-use-selectable-prompt t))
-
-(use-package counsel
-  :ensure t
-  :bind (("C-x b" . counsel-switch-buffer)
-         ("C-x f" . counsel-find-file)))
