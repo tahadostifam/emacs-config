@@ -1,14 +1,23 @@
-(use-package doom-modeline
+(use-package telephone-line
   :ensure t
-  :init
-  (doom-modeline-mode 1)
   :config
-  (setq doom-modeline-height 30)
-  (setq doom-modeline-bar-width 3)
-  (setq doom-modeline-icon t)
-  (setq doom-modeline-buffer-file-name-style 'relative-from-project)
-  (setq doom-modeline-vcs-max-length 50)
-  (setq doom-modeline-enable-word-count t)
-  (setq doom-modeline-enable-eldoc t)
-  (setq doom-modeline-major-mode-icon t)
-  (setq doom-modeline-checker-simple-format t))
+  (telephone-line-mode 1)
+  
+  (setq telephone-line-primary-left-separator 'telephone-line-erc-left)
+  (setq telephone-line-primary-right-separator 'telephone-line-erc-right)
+  
+  ;; Left: Everything about the file
+  (setq telephone-line-lhs
+        '((evil   . (telephone-line-evil-tag-segment))
+          (accent . (telephone-line-vc-segment))
+          (nil    . (telephone-line-projectile-segment
+                     telephone-line-buffer-name-segment
+                     telephone-line-major-mode-segment))))
+  
+  ;; Right: Position, encoding, line endings, time
+  (setq telephone-line-rhs
+        '((nil    . (telephone-line-position-segment
+                     telephone-line-column-segment))
+          (accent . (telephone-line-buffer-encoding-segment
+                     telephone-line-eol-segment
+                     telephone-line-time-segment)))))

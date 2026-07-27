@@ -36,8 +36,9 @@
 (load-file "~/.emacs.d/plugins/sidebar.el")
 (load-file "~/.emacs.d/plugins/fold.el")
 (load-file "~/.emacs.d/plugins/icons.el")
-(load-file "~/.emacs.d/plugins/modeline.el")
-;;(load-file "~/.emacs.d/plugins/telega.el")
+;; (load-file "~/.emacs.d/plugins/modeline.el")
+(load-file "~/.emacs.d/plugins/no-littering.el")
+;; (load-file "~/.emacs.d/plugins/telega.el")
 
 ;; Cyrus Mode
 (load-file "~/.emacs.d/plugins/cyrus-mode.el")
@@ -46,4 +47,5 @@
 (add-to-list 'custom-theme-load-path
              (expand-file-name "themes" user-emacs-directory))
 
-(load-theme 'skull :no-confirm)
+;; (load-theme 'skull :no-confirm)
+(load-theme 'naysayer :no-confirm)
