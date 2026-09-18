@@ -22,3 +22,9 @@
 
 (global-set-key (kbd "C-c +") 'text-scale-increase)
 (global-set-key (kbd "C-c -") 'text-scale-decrease)
+
+(use-package ansi-color
+  :hook (compilation-filter . ansi-color-compilation-filter))
+
+(setq split-height-threshold nil)
+(setq split-width-threshold nil)

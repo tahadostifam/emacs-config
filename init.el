@@ -61,7 +61,8 @@
             sideline-flymake spaceline telephone-line toml-mode
             treemacs-all-the-icons treemacs-magit treemacs-nerd-icons
             treemacs-projectile vertico web-mode
-            whitespace-cleanup-mode yaml-mode)))
+            whitespace-cleanup-mode yaml-mode))
+ '(safe-local-variable-directories '("/home/tahad/Code/Cyrus/Cyrus/")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
